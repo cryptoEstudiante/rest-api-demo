@@ -1,0 +1,293 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    CSS for HTTP Request Demo
+*/
+html {
+    /*font-size: 16px; original*/
+    font-size:16px;  /*font-size 100% or 62.5%*/
+}
+a.my-Link:link {
+    color: darkblue;
+    /*#CC0000;*/
+}
+a.my-Link:hover {
+    color: #c0b3a0;
+}
+/*visited links have a non-bright color*/
+a.my-Link:visited {
+    color: #808080;
+    /*644f7f; 999999*/
+}
+.m-title-div {
+    box-sizing:border-box;
+    width: 90%;
+    float: left;
+    display: block;
+    padding: .625rem;
+    margin: .625rem.625rem .625rem .625rem;
+    overflow: hidden;
+    min-height:3.125rem;
+    font-size: 2rem;
+    font-family: 'Ubuntu', sans-serif; /*Georgia, serif;*/
+    border: .125rem solid;
+    background-color: #ffffff;
+}
+.wrap-centered-content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+/*BIG VIEW: of the wrap-centered-content container:
+left 30% panel(id=aside):float left & 
+right panel 70% (id=container-text):inline-block
+*/
+.aside {
+    width: 25%;
+    margin: 0  3% 0 3%;
+    float: left;
+    min-width: 275px; /*Enbles container-text to flow below*/
+}
+.m-container-text {
+    box-sizing:border-box;
+    width: 75%;
+    min-width: 450px;
+   /*margin top right bottom left*/
+    margin: 0 2% 0 2%;  
+    display: block;
+    padding: 1%;
+    text-align: left;
+}
+@media screen and (max-width: 650px) {
+     .m-container-text  {
+        width: 80%;
+        min-width: 350px;
+        margin: 0 5% 0 5%; 
+        clear: left;
+      }
+}
+@media screen and (max-width: 400px) {
+     .m-container-text  {
+        width: 70%;
+        min-width: 200px;
+        margin: 0 5% 0 5%; 
+        clear: left;
+      }
+}
+.m-p {
+    display: block;
+    margin: 0 0 0 0;
+}
+.full-container {
+    width: 70%;
+    margin: 0 5% 0 5%;
+    text-align: left;
+}
+body {
+  font-family:  'Ubuntu', sans-serif;
+  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  font-size: 1rem;
+  color: #000000;
+  text-size-adjust: none;
+}
+.m-hWelcome {
+    color: black;
+    font-size: 22px;
+    font-family: Georgia, serif;
+}
+.m-magazine {
+    color: black;
+    font-size: 18px;
+    font-family: Georgia, serif;
+}
+.clear {
+    clear: both;
+}
+/***********start tooltip******************/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #22252c; 
+    color: #ffffff;  
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+    padding: 5px 3px;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.m-tooltip .m-tooltiptext {
+    top: -10px;
+    left: 105%;
+}
+/************end tooltip*****************/
+/* FONT FAMILY SPECIFIED FOR ENTIRE TABLE HERE*/
+/* FONT COLOR SPECIFIED FOR ENTIRE TABLE HERE*/
+.m-Table {
+    color: #000000;
+    border: 3px solid #000000;
+    display: block;
+    width: 275px;
+    table-layout: fixed;
+    background-color: #c3c3c3;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    /*Horiz Vert sets space bet adjacent cells*/
+    border-spacing: 7px 8px;
+    margin-left: 0;
+    font-family: helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+/* Header for each column */
+.m-TableHead {
+    border-bottom: 1px solid #000000;
+    height: 26px;
+    width: 30px;
+    text-overflow: ellipse;
+    white-space: nowrap;
+    display: table-cell;
+    padding: 3px;
+}
+/* at the top, col name */
+#m-TableHead1 {
+    border-bottom: 1px solid #000000;
+    height: 26px;
+    width: 36px;
+    text-overflow: ellipsis;
+    font-family: helvetica, "Trebuchet MS", Verdana, sans-serif;
+    white-space: nowrap;
+    display: table-cell;
+    padding: 3px;
+}
+/* at the top, col name */
+#m-TableHead2 {
+    border-bottom: 1px solid #000000;
+    height: 26px;
+    width: 30px;
+    text-overflow: ellipsis;
+    font-family: helvetica, "Trebuchet MS", Verdana, sans-serif;
+    white-space: nowrap;
+    display: table-cell;
+    padding: 3px;
+}
+/* name of mkt*/
+.m-TableCell1 {
+    width: 35px;
+    height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: table-cell;
+    padding: 3px;
+}
+#m-TableCell2-P2P-Percent {
+    height: 24px;
+    width: 36px;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+    display: table-cell;
+    padding: 3px;
+}
+#m-TableCell2-CEXIO-Percent {
+    height: 24px;
+    width: 36px;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+    display: table-cell;
+    padding: 3px;
+}
+#m-TableCell1-P2P-Price {
+    height: 24px;
+    width: 36px;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+    display: table-cell;
+    padding: 3px;
+}
+.m-TableCell1-CEXIO-Price {
+    height: 24px;
+    width: 36px;
+    overflow: hidden;
+    text-overflow: clip;
+    word-wrap: break-word;
+    display: table-cell;
+    padding: 3px;
+}
+/* NOT USED */
+.m-TableCell {
+    height: 24px;
+    text-overflow: ellipse;
+    padding: 3px;
+    width: 36px;
+    display: table-cell;
+    padding: 3px;
+}
+/*table-header-group*/
+.m-TableRowGroup {
+    display: table-row-group;
+}
+/*for the diagram */
+.m-float-right {
+    background-color: #ffffff;
+    float: right;
+    margin: 0 0 0 0;
+}
+/* HTTP DEMO */
+.m-footer {
+    text-align: center;
+    background-color: #ffffff;
+    font-size: 16px;
+    display: block;
+    color: #000000;
+    padding: 0;
+    margin: 0 0 0 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+}
+.m-footer-p {
+    text-align: center;
+    font-size: 12px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+/* by-line */
+.m-i-by {
+    font-size: smaller;
+}
+

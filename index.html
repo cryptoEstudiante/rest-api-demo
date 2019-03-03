@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Demo II</title>
+        <link rel="stylesheet" href="css/maincss.css">
+        <meta charset="UTF-8">    
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"> 
+    </head>
+    <body>    
+        <noscript>  
+        <div>
+            <style scoped>
+                p {background-color:powderblue;} 
+            </style> 
+            <p>JavaScript is not enabled. Please enable JavaScript to see real-time quotes.</p>
+        </div>      
+        </noscript>
+        <script type="text/javascript" src="jquery-3.2.1.js"></script>   
+        <script type="text/javascript" src="highcharts.js"></script> 
+        <div class="m-title-div">    
+          Demo <span class="m-i-serif-type-letter-sized">II</span>: Bitcoin Price in Real Time&mdash;an Implementation 
+          of REST APIs    
+        </div>   
+        <div class="wrap-centered-content">
+            <div class="aside">
+                <div id="container_Chart" style="width: 280px;height: 300px;"></div>
+                    <div class="m-Table">
+                    <div class ="m-TableRowGroup">
+                        <div class="m-TableHead">Market</div>
+                        <div id="m-TableHead1">Price<br>in U.S. Dollars</div>
+                        <div id="m-TableHead2"><b>% Change</b></div>
+                    </div>
+                    <div class="m-TableRowGroup">
+                        <div class="m-TableCell1">P2P</div>
+                        <!--price is first child of P2P-Price element-->
+                        <!-- initially displays STR_FOR_USERWAIT-->
+                        <div id="m-TableCell1-P2P-Price">Updating...</div>
+                        <div id="m-TableCell2-P2P-Percent">...</div>
+                    </div>
+                    <div class="m-TableRowGroup">
+                        <div class="m-TableCell1">CEX</div>
+                        <!-- initially displays STR_FOR_USERWAIT-->
+                        <div id="m-TableCell1-CEXIO-Price">Updating...</div>
+                        <div id="m-TableCell2-CEXIO-Percent">...</div>
+                    </div>
+                 </div><!--end table: margin: 0 auto text-align:center-->
+            </div><!--end aside-->
+            <div class="m-container-text">
+                <br><br><br>
+                <header class="m-hWelcome"><strong>Welcome to My Programming Demo!</strong></header>
+                 <!--[if IE lte 9]><br><br><p style="background-color:#c0b3a0;color:blue;padding:.94rem;">
+                   The Web page cannot be 
+                  displayed in your browser. Upgrade your browser to the recent Chrome, 
+                  Internet Explorer, Opera, Firefox or Safari. Thanks!</p><br><br><![endif]-->
+                <br>
+                I built the Web page you are viewing, and programmed the JavaScript client that informs the Web page.  
+                <div class="m-float-right">
+                   <img src="images/ref-model-png.png" alt="Reference Model" style="padding:3px;height:268px;width:210px;margin:10px 0 10px 10px;" >
+                 </div>
+                <br><br>
+                 My JavaScript client requests bitcoin price updates from two data providers: the
+                 <a class="my-link" tabindex="4" href="#" onclick="window.open('https://www.CEX.io/','_blank')">CEX.IO</a>
+                 bitcoin exchange and the <a class="my-link" tabindex="4" href="#" onclick="window.open('https://chain.so/','_blank')">SoChain</a>
+                 blockchain reader. The blockchain reader reads the blockchain of the <i class="italic-hover">
+                 peer-to-peer (P2P) bitcoin network</i>. The P2P bitcoin network is the network of machines running
+                 <i>Bitcoin Core</i>, the full reference client.<br><br>
+                 <b>Note</b> Please wait: My JavaScript client updates the chart every <b style="color:#00468b;">ten seconds</b>, 
+                 which meets data provider requirements. For this demo, data is being provided free of charge by each data provider.
+                              <!--An animation between chart updates would improve the user experience (UX).-->
+                 <!--div class="tooltip">&#x25b6;
+                 <span class="tooltiptext"> The P2P bitcoin network is the network of machines running
+                 <i>Bitcoin Core</i>&mdash; the full reference client.
+                 </span>
+                 </div-->
+                 <br><br> 
+                 Each data provider defines a Representational State Transfer <b>(REST) API</b> to enable subscribers,
+                 like my JavaScript client, to fetch price updates from a public
+                 endpoint. I coded my JavaScript client to implement an <b>asynchronous Hypertext Transfer Protocol (HTTP) 
+                 GET request</b> to the endpoint of each provider. Data Provider responses are in <b>JSON</b> and my Javascript client 
+                 converts the JSON to a Javascript object. The object provides access to the last bitcoin price sent by each data provider.
+                 My JavaScript client then displays the last prices using the <b>Highcharts code libraries</b>.     
+                 <br><br>
+               I developed my JavaScript client on a machine running Microsoft 
+                Windows 8.1. For debugging the client, I used the
+<a class="my-Link" href="#" onclick="window.open('https://developers.google.com/web/tools/chrome-devtools/console','_blank')">
+                Google Chrome DevTools Console</a>. Following is a summary of the programming tools and languages I used
+                to create the demo:<br>
+                <ul>
+                <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href="https://netbeans.org/">NetBeans Integrated
+                  development environment</a> (IDE) 8.2.</li>
+                <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href="https://www.w3.org/TR/WD-css2/">
+                        Cascading Style Sheets, level 2 (CSS2)</a> and 
+                        level 3 (CSS3) with <a class="my-Link" href="https://www.w3.org/TR/css3-mediaqueries/">media queries</a>.</li>
+               <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href="http://jquery.com/">
+                 JQuery</a> programming language.</li>
+               <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href="http://json.org/">JSON</a> data interchange format.</li>
+                <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href=" https://www.highcharts.com/">Highcharts</a>.</li>
+                <li style="list-style:square;margin-top: 10px;">The latest 
+                <a class="my-Link" href="https://html.spec.whatwg.org/dev/infrastructure.html">
+                  Hypertext Markup Language (HTML) Living
+                  Standard</a>, also known as   
+                <a class="my-Link" href="https://blog.whatwg.org/html-is-the-new-html5">
+                  HTML 5</a>.</li> 
+               <li style="list-style:square;margin-top: 10px;">Blockchain <a class="my-Link" href="https://chain.so/api/">SoChain API.</a>
+               <li style="list-style:square;margin-top: 10px;"><a class="my-Link" href="https://cex.io/rest-api">CEX.IO REST API.</a>    
+               </ul> 
+               <br>
+           </div> <!--end full (width) container -->
+         </div><!--wrapper centered-->
+     <script type="text/javascript" src="js-client-rest-api.js">
+     </script>
+    </body>
+</html>
